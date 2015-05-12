@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>alertConfirm</title>
+<link href="css/alertBox.css" rel = "stylesheet" type="text/css"/>
+</head>
+<style>
+.tableList{border:1px solid #ccc;}
+.tableList th{border:1px solid #ccc;height:50px;}
+.tableList .cancel{text-decoration: none}
+.tableList .cancel:hover{text-decoration:underline;}
+.highLight{background-color:#cfc;}
+.green{color:#118402;}
+</style>
+<body>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tableList" id="orderList">
+	<tbody>
+		<tr>
+			<th>
+				<div>日期</div>
+			</th>
+			<th>
+				<div>币种</div>
+			</th>
+			<th>
+				<div>通知金额</div>
+			</th>
+			<th>
+				<div>实际到账金额</div>
+			</th>
+			<th>
+				<div>状态</div>
+			</th>
+		</tr>
+		<tr>
+			<th>
+				<div>2015/05/12</div>
+			</th>
+			<th>
+				<div>港币</div>
+			</th>
+			<th>
+				<div>11.00</div>
+			</th>
+			<th>
+				<div></div>
+			</th>
+			<th>
+				<div>
+					<span class="green">处理中</span>
+					<a href="javascript:;" class="cancel" id="alerBtn">撤回</a>
+				</div>
+			</th>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <div class="alertConfirm" id="alertConfirm">
+	<div class="mask"></div>
+	<div class="dialog borderRadius">
+		<h3>温馨提示:</h3>
+		<div class="dialogContent">
+			<p>
+				<i></i>
+				<span class="borderRadius">确定要继续吗？</span>
+			</p>
+		</div>
+		<div class="dialogfooter">
+			<a href="javascript:;" class="borderRadius">取消</a>
+			<a href="javascript:;" class="borderRadius">确定</a>
+		</div>
+		<a class="dialogClose" title="关闭"></a>
+	<div>
+<div> -->
+<script src="js/main.js"></script>
+<script>
+
+var tableList = document.getElementById('orderList');
+var trList = tableList.getElementsByTagName('tr');
+var processContent = tableList.getElementsByTagName('span')[0];
+var cancelBtn = document.getElementById('alerBtn');
+
+// 高亮显示
+for(var i=0;i<trList.length;i++){
+	trList[i].addEventListener('mouseover',function(){
+		this.className = 'highLight';
+	},false);
+
+	trList[i].addEventListener('mouseout',function(){
+		this.className = '';
+	},false)
+}
+
+var cancelBtn = document.getElementById('alerBtn');
+cancelBtn.addEventListener('click',cancelBtnEvent,false)
+
+function cancelBtnEvent(){
+	var My_AlertBox01 = new My_AlertBox('确认撤回吗？',function(){
+		var My_AlertBox02 = new My_AlertBox('已撤回',function(){
+			processContent.innerHTML='';
+			cancelBtn.innerHTML = '撤回后不能返回';
+			if(cancelBtn.innerHTML == '已撤回'){
+			cancelBtn.removeEventListener('click',cancelBtnEvent,false)
+			}
+		});
+		My_AlertBox02.alertConfirm();
+		
+	})
+	My_AlertBox01.alertConfirm();
+}
+	
+	
+
+</script>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/require.js"></script>
+<script>
+
+</script>
+</body>
+</html>
