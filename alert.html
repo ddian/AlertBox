@@ -75,40 +75,42 @@
 <div> -->
 <script src="js/main.js"></script>
 <script>
-
-var tableList = document.getElementById('orderList');
-var trList = tableList.getElementsByTagName('tr');
-var processContent = tableList.getElementsByTagName('span')[0];
-var cancelBtn = document.getElementById('alerBtn');
+!function(){
+	var tableList = document.getElementById('orderList');
+	var trList = tableList.getElementsByTagName('tr');
+	var processContent = tableList.getElementsByTagName('span')[0];
+	var cancelBtn = document.getElementById('alerBtn');
 
 // 高亮显示
-for(var i=0;i<trList.length;i++){
-	trList[i].addEventListener('mouseover',function(){
-		this.className = 'highLight';
-	},false);
+	for(var i=0;i<trList.length;i++){
+		trList[i].addEventListener('mouseover',function(){
+			this.className = 'highLight';
+		},false);
 
-	trList[i].addEventListener('mouseout',function(){
-		this.className = '';
-	},false)
-}
+		trList[i].addEventListener('mouseout',function(){
+			this.className = '';
+		},false)
+	}
 
-var cancelBtn = document.getElementById('alerBtn');
-cancelBtn.addEventListener('click',cancelBtnEvent,false)
+	var cancelBtn = document.getElementById('alerBtn');
+	cancelBtn.addEventListener('click',cancelBtnEvent,false)
 
-function cancelBtnEvent(){
-	var My_AlertBox01 = new My_AlertBox('确认撤回吗？',function(){
-		var My_AlertBox02 = new My_AlertBox('已撤回',function(){
-			processContent.innerHTML='';
-			cancelBtn.innerHTML = '撤回后不能返回';
-			if(cancelBtn.innerHTML == '已撤回'){
-			cancelBtn.removeEventListener('click',cancelBtnEvent,false)
-			}
-		});
-		My_AlertBox02.alertConfirm();
-		
-	})
-	My_AlertBox01.alertConfirm();
-}
+	function cancelBtnEvent(){
+		var My_AlertBox01 = new My_AlertBox('确认撤回吗？',function(){
+			var My_AlertBox02 = new My_AlertBox('撤回后不能返回',function(){
+				processContent.innerHTML='';
+				cancelBtn.innerHTML = '已撤回';
+				if(cancelBtn.innerHTML == '已撤回'){
+				cancelBtn.removeEventListener('click',cancelBtnEvent,false)
+				}
+			});
+			My_AlertBox02.alertConfirm();
+			
+		})
+		My_AlertBox01.alertConfirm();
+	}
+}()
+
 	
 	
 
