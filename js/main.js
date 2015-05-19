@@ -1,6 +1,6 @@
 /*global console*/
 /*jshint multistr: true */
-(function(){
+;(function(){
 'use strict';
 
 function My_AlertBox(str,mydialog_fn){
@@ -68,7 +68,18 @@ function My_AlertBox(str,mydialog_fn){
 
 //弹框出现、消失
 My_AlertBox.prototype.alertConfirm = function(){
-	this.myDialog_newDiv.style.display = 'block';		
+	this.DragObj.style.left = '50%';
+	this.DragObj.style.top = '50%';	
+	// this.DragObj.style.WebkitTransform = 'translate(-50%,-50%)';//出现时的动画覆盖了transform属性，动画结束后才还回来
+
+		this.myDialog_newDiv.style.display = 'block';
+
+
+	this.DragObj.style.marginLeft = -this.DragObj.offsetWidth/2+'px';
+	this.DragObj.style.marginTop = -this.DragObj.offsetHeight/2+'px';
+	console.log(this.DragObj.offsetWidth/2+'_'+this.DragObj.offsetHeight/2);
+	
+
 };
 
 My_AlertBox.prototype.alertDestroy = function(){
@@ -140,20 +151,20 @@ My_AlertBox.prototype.myDialogDragMove = function(oEvent){
 
 	this.clientWidth = document.documentElement.clientWidth||document.body.clientWidth;
 	this.clientHeight = document.documentElement.clientHeight||document.body.clientHeight;
-	if(this.left<50){
+	if(this.left<0){
 		this.left=0
 	}
-	else if(this.left>this.clientWidth-this.DragObj.offsetWidth-50){
+	else if(this.left>this.clientWidth-this.DragObj.offsetWidth){
 		this.left = this.clientWidth-this.DragObj.offsetWidth
 	}
-	if(this.top<50){
+	if(this.top<0){
 		this.top=0;
 	}
-	else if(this.top>this.clientHeight-this.DragObj.offsetHeight-50){
+	else if(this.top>this.clientHeight-this.DragObj.offsetHeight){
 		this.top = this.clientHeight-this.DragObj.offsetHeight
 	}
-	this.DragObj.style.left = this.left+'px';
-	this.DragObj.style.top = this.top+'px';
+	this.DragObj.style.left = this.left+this.DragObj.offsetWidth/2+'px';
+	this.DragObj.style.top  = this.top+this.DragObj.offsetHeight/2+'px';
 };
 
 My_AlertBox.prototype.myDialogDragUp = function(){
