@@ -67,14 +67,14 @@
 	My_AlertBox.prototype.alertConfirm = function(){
 		this.DragObj.style.left = '50%';
 		this.DragObj.style.top = '50%';	
-			this.myDialog_newDiv.style.display = 'block';
-			this.confirm.focus();//焦点
+		this.myDialog_newDiv.style.display = 'block';
+		this.confirm.focus();//焦点
 		this.DragObj.style.marginLeft = -this.DragObj.offsetWidth/2+'px';
 		this.DragObj.style.marginTop = -this.DragObj.offsetHeight/2+'px';
 	};
 
 	My_AlertBox.prototype.alertDestroy = function(){
-		document.body.removeChild(this.myDialog_newDiv);
+		this.myDialog_newDiv.parentNode.removeChild(this.myDialog_newDiv);
 	};
 	// esc键操作弹框
 	My_AlertBox.prototype.escUse = function(ev){
