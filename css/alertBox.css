@@ -1,3 +1,4 @@
+/*keyframes*/
 @-webkit-keyframes move{
 	0%{
 		-webkit-transform:scale(0,0);
@@ -20,7 +21,7 @@
 		-moz-transform:scale(1,1);
 	}
 }
-
+/*****/
 html,body{
 	width:100%;
 	height:100%;
@@ -31,7 +32,25 @@ html,body{
 	font-size: 16px;
 }
 /*表格css*/
-
+.tableList{
+	border:1px solid #ccc;
+}
+.tableList th{
+	border:1px solid #ccc;
+	height:50px;
+}
+.tableList .cancel{
+	text-decoration: none;
+}
+.tableList .cancel:hover{
+	text-decoration:underline;
+}
+.highLight{
+	background-color:#cfc;
+}
+.green{
+	color:#118402;
+}
 
 /*弹框css*/
 .mydialog_alertConfirm{
