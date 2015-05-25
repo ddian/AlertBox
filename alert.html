@@ -68,9 +68,10 @@
 		<a class="dialogClose" title="关闭"></a>
 	<div>
 <div> -->
-<script src="js/main.js"></script>
+<script src="js/alertBox.js"></script>
 <script>
-!function(){
+(function(){
+	'use strict';
 	var tableList = document.getElementById('orderList');
 	var trList = tableList.getElementsByTagName('tr');
 	var processContent = tableList.getElementsByTagName('span')[0];
@@ -84,11 +85,11 @@
 
 		trList[i].addEventListener('mouseout',function(){
 			this.className = '';
-		},false)
+		},false);
 	}
 
 	var cancelBtn = document.getElementById('alerBtn');
-	cancelBtn.addEventListener('click',cancelBtnEvent,false)
+	cancelBtn.addEventListener('click',cancelBtnEvent,false);
 
 	function cancelBtnEvent(){
 		var My_AlertBox01 = new My_AlertBox('确认撤回吗？',function(){
@@ -96,31 +97,32 @@
 				processContent.innerHTML='';
 				cancelBtn.innerHTML = '已撤回';
 				if(cancelBtn.innerHTML == '已撤回'){
-				cancelBtn.removeEventListener('click',cancelBtnEvent,false)
+				cancelBtn.removeEventListener('click',cancelBtnEvent,false);
 				}
 			});
 			My_AlertBox02.alertConfirm();
 			
-		})
+		});
 		My_AlertBox01.alertConfirm();
 	}
-}()
+})();
 </script>
 
-弹框组件使用说明：
 
-1、新建一个HTML文件，为弹框准备一个可点击的按钮。
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>AlertBox</title>
-</head>
-<body> 
-	<!-- 为弹框准备一个可点击的按钮 -->
-	<input type="button" value="按钮" id="btn"/>
-</body>
-</html>
-</body>
-</html> 
-2、新建<script>标签引入弹框js文件
+	</body>
+	</html>
+	</body>
+	</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+

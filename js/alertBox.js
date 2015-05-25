@@ -1,4 +1,4 @@
-/*global console*/
+/*global*/
 /*jshint multistr: true */
 ;(function(){
 	'use strict';
@@ -63,7 +63,6 @@
 		}	
 	};
 
-	//弹框出现、消失
 	My_AlertBox.prototype.alertConfirm = function(){
 		this.DragObj.style.left = '50%';
 		this.DragObj.style.top = '50%';	
