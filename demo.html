@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>confirmBoxDemo</title>
+<link href="css/alertBox.css" rel = "stylesheet" type="text/css"/>
+</head>
+<body>
+<input type="button" value="clickMe" id="btn"/>
+<script src="js/alertBox.js"></script>	
+<script>
+(function(){
+'use strict';
+var btn = document.getElementById('btn');
+function confirmEvent(){
+	var box1 = new My_AlertBox('确认继续吗',function(){
+		var box2 = new My_AlertBox('继续后就不能返回了哦',function(){
+			btn.value = 'have clicked';
+			if(btn.value=='have clicked'){
+				btn.removeEventListener('click',confirmEvent,false);
+			}
+		});
+		box2.alertConfirm();
+	});
+	box1.alertConfirm();
+}	
+btn.addEventListener('click',confirmEvent,false);
+})();
+</script>
+</body>
+</html>
+
