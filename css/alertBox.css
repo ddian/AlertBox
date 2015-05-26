@@ -64,8 +64,8 @@ html,body{
 	height: 100%;
 	z-index:9999;
 	background-color: #000;
-	opacity:0.2;
-	filter:alpha(opacity:20);
+	opacity:0.6;
+	filter:alpha(opacity:60);
 }
 .mydialog_alertConfirm .mydialog_dialog{
 	cursor:move;
@@ -75,39 +75,30 @@ html,body{
 	top:0;
 	left:0;
 	z-index:10000;
-	background:#999;
-	border:5px solid #fff;
-	padding:20px 20px;
+	background:#fff;
 	-webkit-animation:move .3s ease-in-out;
 	-webkit-user-select:none;
 	-moz-user-select:none;
 }
 .mydialog_alertConfirm  h3{
 	font-family: 'microsoft yahei';
-	margin-bottom:5px;
-	border-bottom: 3px solid #eee;
-	height:30px
+	height:30px;
+	padding: 10px 0 0px 20px;
+    background: #eee;
+    border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
 }
 .mydialog_alertConfirm .mydialog_Content p{
-	position: relative;
-	height:120px;
+	text-align: center;
+	height:100px;
+	line-height: 100px
 }
 .mydialog_alertConfirm .mydialog_Content i{
 	background: url(../img/icon01.png) no-repeat 0px -1960px;
 	width:77px;
 	height:75px;
 	display: inline-block;
-}
-.mydialog_alertConfirm .mydialog_Content span{
-	width:60%;
-	height:50px;
-	background: #eee;
-	display: inline-block;
-	position: absolute;
-	top:24px;
-	left:77px;
-	text-align: left;
-	padding:10px;
 }
 .mydialog_alertConfirm .mydialog_footer a{
 	display: inline-block;
@@ -118,28 +109,48 @@ html,body{
 	margin-left: 20%;
 	text-align: center;
 	line-height: 30px;
-	color:#000;
-	-webkit-box-shadow:inset 0px 0px 20px #0a5ecc,0 2px 2px #000;
-	-moz-box-shadow:inset 0px 0px 20px #0a5ecc,0 2px 2px #000;
+	color:#fff;
+	opacity: 0.8;
+	filter:alpha(opacity:80);
+}
+.mydialog_alertConfirm .mydialog_footer a:nth-of-type(1){
+	background: #de5555;
+	-webkit-box-shadow:0 2px 2px #000;
+	-moz-box-shadow:0 2px 2px #000;
 	-webkit-transition:.2s all ease;
 	-moz-transition:.2s all ease;
 }
 .mydialog_alertConfirm .mydialog_footer a:hover{
-	box-shadow:inset 0px 0px 40px #0a5ecc,0 2px 5px #000;
+	box-shadow:0 2px 5px #000;
+	opacity: 1;
+	filter:alpha(opacity:100);
+	
 }
+.mydialog_alertConfirm .mydialog_footer a:nth-of-type(2){
+	background: #39c082;
+	-webkit-box-shadow:0 2px 2px #000;
+	-moz-box-shadow:0 2px 2px #000;
+	-webkit-transition:.2s all ease;
+	-moz-transition:.2s all ease;
+}
+
 .mydialog_alertConfirm .mydialog_CloseBtn{
-	background:url(../img/icon01.png)no-repeat -640px -90px;
-	width:15px;
-	height:15px;
+	background:url(../img/close1.png)no-repeat;
+	width:20px;
+	height:20px;
 	position: absolute;
-	top:15px;
-	right:15px;
+	top:10px;
+	right:10px;
 	cursor: pointer;
 	-webkit-transition:0.2s -webkit-transform ease;
 	-moz-transition:0.2s -moz-transform ease;
+	opacity:0.7;
+	filter:alpha(opacity:70);
 }
 .mydialog_alertConfirm .mydialog_CloseBtn:hover{
-	background-position: -660px -90px;
+	/*background:url(../img/close.png)no-repeat;*/
+	opacity: 1;
+	filter:alpha(opacity:100);
 	-webkit-transform:rotate(180deg);
 	-moz-transform:rotate(180deg);
 }

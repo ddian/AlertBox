@@ -92,7 +92,7 @@
 	cancelBtn.addEventListener('click',cancelBtnEvent,false);
 
 	function cancelBtnEvent(){
-		var My_AlertBox01 = new My_AlertBox('确认撤回吗？',function(){
+		var My_AlertBox01 = new My_AlertBox('确定要继续吗？',function(){
 			var My_AlertBox02 = new My_AlertBox('撤回后不能返回',function(){
 				processContent.innerHTML='';
 				cancelBtn.innerHTML = '已撤回';
