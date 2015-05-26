@@ -30,8 +30,9 @@
 <input type="button" value="按钮" id="btn"/>
 ```
 
-2、 引入js文件
+2、 引入css及js文件
 ```
+<link href="alertBox.css" rel = "stylesheet" type="text/css"/>
 <script type="javascript/text" src="alertBox.js"></script>
 ```
 
