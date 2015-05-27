@@ -21,6 +21,39 @@
 		-moz-transform:scale(1,1);
 	}
 }
+@-o-keyframes move{
+	0%{
+		-o-transform:scale(0,0);
+	}
+	50%{
+		-o-transform:scale(1.1,1.1);
+	}
+	100%{
+		-o-transform:scale(1,1);
+	}
+}
+@-ms-keyframes move{
+	0%{
+		-ms-transform:scale(0,0);
+	}
+	50%{
+		-ms-transform:scale(1.1,1.1);
+	}
+	100%{
+		-ms-transform:scale(1,1);
+	}
+}
+@keyframes move{
+	0%{
+		transform:scale(0,0);
+	}
+	50%{
+		transform:scale(1.1,1.1);
+	}
+	100%{
+		transform:scale(1,1);
+	}
+}
 /*****/
 html,body{
 	width:100%;
@@ -79,8 +112,15 @@ html,body{
 	z-index:10000;
 	background:#fff;
 	-webkit-animation:move .3s ease-in-out;
+	-moz-animation:move .3s ease-in-out;
+	-o-animation:move .3s ease-in-out;
+	-ms-animation:move .3s ease-in-out;
+	animation:move .3s ease-in-out;
 	-webkit-user-select:none;
 	-moz-user-select:none;
+	-ms-user-select:none;
+	-o-user-select:none;
+	user-select:none;
 }
 .mydialog_alertConfirm  h3{
 	font-family: 'microsoft yahei';
@@ -90,6 +130,9 @@ html,body{
     border-radius: 10px 10px 0 0;
     -webkit-border-radius: 10px 10px 0 0;
     -moz-border-radius: 10px 10px 0 0;
+    -ms-border-radius: 10px 10px 0 0;
+    -o-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
 }
 .mydialog_alertConfirm .mydialog_Content p{
 	text-align: center;
@@ -118,13 +161,22 @@ html,body{
 }
 .mydialog_alertConfirm .mydialog_footer a:nth-of-type(1){
 	-webkit-box-shadow:inset 0px 0px 40px #de5555,0 2px 2px #000;
+	-ms-box-shadow:inset 0px 0px 40px #de5555,0 2px 2px #000;
+	-o-box-shadow:inset 0px 0px 40px #de5555,0 2px 2px #000;
+	box-shadow:inset 0px 0px 40px #de5555,0 2px 2px #000;
 	-moz-box-shadow:inset 0px 0px 40px #de5555,0 2px 2px #000;
 	-webkit-transition:.2s all ease;
 	-moz-transition:.2s all ease;
+	-ms-transition:.2s all ease;
+	-o-transition:.2s all ease;
+	transition:.2s all ease;
 }
 .mydialog_alertConfirm .mydialog_footer a:nth-of-type(1):hover{
 	-webkit-box-shadow:inset 0 2px 100px #de5555,0 2px 5px #000;
+	box-shadow:inset 0 2px 100px #de5555,0 2px 5px #000;
+	-ms-box-shadow:inset 0 2px 5px #000,0 2px 5px #000;
 	-moz-box-shadow:inset 0 2px 5px #000,0 2px 5px #000;
+	-o-box-shadow:inset 0 2px 5px #000,0 2px 5px #000;
 	color:#fff;
 	opacity: 1;
 	filter:alpha(opacity:100);
@@ -132,13 +184,22 @@ html,body{
 }
 .mydialog_alertConfirm .mydialog_footer a:nth-of-type(2){
 	-webkit-box-shadow:inset 0px 0px 40px #39c082,0 2px 2px #000;
+	box-shadow:inset 0px 0px 40px #39c082,0 2px 2px #000;
+	-ms-box-shadow:inset 0px 0px 40px #39c082,0 2px 2px #000;
 	-moz-box-shadow:inset 0px 0px 40px #39c082,0 2px 2px #000;
+	-o-box-shadow:inset 0px 0px 40px #39c082,0 2px 2px #000;
 	-webkit-transition:.2s all ease;
 	-moz-transition:.2s all ease;
+	-ms-transition:.2s all ease;
+	-o-transition:.2s all ease;
+	transition:.2s all ease;
 }
 .mydialog_alertConfirm .mydialog_footer a:nth-of-type(2):hover{
 	-webkit-box-shadow:inset 0 2px 100px #39c082,0 2px 5px #000;
+	box-shadow:inset 0 2px 100px #39c082,0 2px 5px #000;
 	-moz-box-shadow:inset 0 2px 100px #39c082,0 2px 5px #000;
+	-o-box-shadow:inset 0 2px 100px #39c082,0 2px 5px #000;
+	-ms-box-shadow:inset 0 2px 100px #39c082,0 2px 5px #000;
 	color:#fff;
 	opacity: 1;
 	filter:alpha(opacity:100);
@@ -154,6 +215,9 @@ html,body{
 	cursor: pointer;
 	-webkit-transition:0.2s -webkit-transform ease;
 	-moz-transition:0.2s -moz-transform ease;
+	-ms-transition:0.2s -ms-transform ease;
+	-o-transition:0.2s -o-transform ease;
+	transition:0.2s transform ease;
 	opacity:0.7;
 	filter:alpha(opacity:70);
 }
@@ -163,10 +227,15 @@ html,body{
 	filter:alpha(opacity:100);
 	-webkit-transform:rotate(180deg);
 	-moz-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	transform:rotate(180deg);
 }
 .mydialog_alertConfirm .mydialog_borderRadius{
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
+	-ms-border-radius:10px;
+	-o-border-radius:10px;
 	border-radius:10px;
 }
 
