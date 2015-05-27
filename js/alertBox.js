@@ -14,13 +14,13 @@
 
 		this.myDialog_newDiv.innerHTML = '<div class="mydialog_mask" id="alerMask"></div>\
 		<div class="mydialog_dialog mydialog_borderRadius" onselectstart="return false">\
-		<h3>提示:</h3>\
+		<h3>Confirm</h3>\
 		<div class="mydialog_Content">\
 			<p>'+str+'</p>\
 		</div>\
 		<div class="mydialog_footer"">\
-			<a href="javascript:;" class="mydialogCancelBtn">取消</a>\
-			<a href="javascript:;" class="mydialogConfirmBtn">确定</a>\
+			<a href="javascript:;" class="mydialogCancelBtn">NO</a>\
+			<a href="javascript:;" class="mydialogConfirmBtn">YES</a>\
 		</div>\
 		<a href="javascript:;" class="mydialog_CloseBtn" title="关闭"></a>\
 		<div>';
