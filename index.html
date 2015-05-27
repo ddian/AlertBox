@@ -79,7 +79,54 @@ html,body{
     transform: translate3d(10px, 0, 0);
   }
 }
+@-moz-keyframes shake {
+  0%, 100% {
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 
+  10%, 30%, 50%, 70%, 90% {
+    -moz-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -moz-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+@-ms-keyframes shake {
+  0%, 100% {
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -ms-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -ms-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+@-o-keyframes shake {
+  0%, 100% {
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -o-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -o-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
 @keyframes shake {
   0%, 100% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -101,10 +148,17 @@ html,body{
 	font-size: 20px;
 	margin-bottom: 20px;
 	-webkit-animation:shake 1s normal linear;
+	-ms-animation:shake 1s normal linear;
+	-o-animation:shake 1s normal linear;
+	-ms-animation:shake 1s normal linear;
+	animation:shake 1s normal linear;
 }
 .demoContent article a{
 	display: block;
 	background-image:-webkit-linear-gradient(#fff,#ffc);
+	background-image:-moz-linear-gradient(#fff,#ffc);
+	background-image:-ms-linear-gradient(#fff,#ffc);
+	background-image:-o-linear-gradient(#fff,#ffc);
 	border-radius: 30px;
 	border: 2px solid #fff;
 	line-height: 50px;
@@ -118,6 +172,9 @@ html,body{
 }
 .demoContent article a:hover{
 	background-image:-webkit-linear-gradient(#ffc,#fff);
+	background-image:-moz-linear-gradient(#ffc,#fff);
+	background-image:-ms-linear-gradient(#ffc,#fff);
+	background-image:-o-linear-gradient(#ffc,#fff);
 	font-size: 18px;
 }
 .footer{
