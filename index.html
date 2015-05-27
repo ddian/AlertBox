@@ -199,7 +199,7 @@
 			font-weight:300;
 		}
 	}
-	.preview{max-width: 640px;margin:0 auto 20px;display: none;}
+	.preview{max-width: 640px;margin:0 auto 20px;display: none;padding:0 5px;}
 	.preview *{
 		font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
 	}
@@ -539,17 +539,17 @@
 	<pre class=" hljs xml"><code><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/alertBox.css"</span> <span class="hljs-attribute">rel</span>="<span class="hljs-attribute">stylesheet</span>" <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>/&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"javascript/text"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"alertBox.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 	</code></pre>
 	<p class="line" data-line="40">3、创建&lt;script&gt;&lt;/script&gt;，绑定事件</p>
-	<pre class=" hljs javascript"><code><span class="hljs-keyword">var</span> btn = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'btn'</span>);
-	btn.addEventListener(<span class="hljs-string">'click'</span>,alertEvent,<span class="hljs-literal">false</span>);
-	<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">alertEvent</span><span class="hljs-params">()</span></span>{
-	    <span class="hljs-keyword">var</span> box1 = <span class="hljs-keyword">new</span> My_AlertBox(<span class="hljs-string">'第一个弹框'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
-	        <span class="hljs-keyword">var</span> box2 = <span class="hljs-keyword">new</span> My_AlertBox(<span class="hljs-string">'第二个弹框'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
-	            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'成功了'</span>)
-	        });
-	        box2.alertConfirm();
-	    });
-	    box1.alertConfirm();
-	}
+<pre class=" hljs javascript"><code><span class="hljs-keyword">var</span> btn = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'btn'</span>);
+btn.addEventListener(<span class="hljs-string">'click'</span>,alertEvent,<span class="hljs-literal">false</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">alertEvent</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">var</span> box1 = <span class="hljs-keyword">new</span> My_AlertBox(<span class="hljs-string">'第一个弹框'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">var</span> box2 = <span class="hljs-keyword">new</span> My_AlertBox(<span class="hljs-string">'第二个弹框'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'成功了'</span>)
+        });
+        box2.alertConfirm();
+    });
+    box1.alertConfirm();
+}
 	</code></pre>
 </div>
 <div class="footer">

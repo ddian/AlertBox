@@ -141,7 +141,8 @@ html,body{
 	text-align: center;
 	height:100px;
 	line-height: 100px;
-	padding:0 30px;
+	padding:0 10px;
+	white-space: nowrap;
 }
 .mydialog_alertConfirm .mydialog_Content i{
 	background: url(../img/icon01.png) no-repeat 0px -1960px;
