@@ -67,6 +67,9 @@
 		this.confirm.focus();//焦点
 		this.DragObj.style.marginLeft = -this.DragObj.offsetWidth/2+'px';
 		this.DragObj.style.marginTop = -this.DragObj.offsetHeight/2+'px';
+		document.addEventListener('touchmove',function(ev){
+			ev.preventDefault();
+		},false);
 	};
 
 	My_AlertBox.prototype.alertDestroy = function(){
