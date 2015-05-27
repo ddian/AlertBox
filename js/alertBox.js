@@ -59,28 +59,18 @@
 			document.removeEventListener('keydown',fn,false);
 		}	
 	};
-	My_AlertBox.prototype.prevent = function(ev){
-		ev.preventDefault();
-	};
+
 	My_AlertBox.prototype.alertConfirm = function(){
-		var _this = this;
 		this.DragObj.style.left = '50%';
 		this.DragObj.style.top = '50%';	
 		this.myDialog_newDiv.style.display = 'block';
 		this.confirm.focus();//焦点
 		this.DragObj.style.marginLeft = -this.DragObj.offsetWidth/2+'px';
 		this.DragObj.style.marginTop = -this.DragObj.offsetHeight/2+'px';
-		document.addEventListener('touchmove',function(ev){
-			_this.prevent(ev);
-		},false);
 	};
 
 	My_AlertBox.prototype.alertDestroy = function(){
-		var _this = this;
 		this.myDialog_newDiv.parentNode.removeChild(this.myDialog_newDiv);
-		document.removeEventListener('touchmove',function(ev){
-			_this.prevent(ev);
-		},false);
 	};
 	// esc键操作弹框
 	My_AlertBox.prototype.escUse = function(ev){
