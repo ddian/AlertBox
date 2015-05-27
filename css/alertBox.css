@@ -30,6 +30,8 @@ html,body{
 	margin:0;
 	padding:0;
 	font-size: 16px;
+	box-sizing:border-box;
+	font-family:Helvetica, sans-serif;
 }
 /*表格css*/
 .tableList{
@@ -69,7 +71,7 @@ html,body{
 }
 .mydialog_alertConfirm .mydialog_dialog{
 	cursor:move;
-	width:460px;
+	min-width:320px;
 	height:200px;
 	position: absolute;
 	top:0;
@@ -92,7 +94,8 @@ html,body{
 .mydialog_alertConfirm .mydialog_Content p{
 	text-align: center;
 	height:100px;
-	line-height: 100px
+	line-height: 100px;
+	padding:0 30px;
 }
 .mydialog_alertConfirm .mydialog_Content i{
 	background: url(../img/icon01.png) no-repeat 0px -1960px;
