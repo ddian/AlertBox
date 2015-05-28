@@ -4,8 +4,10 @@
 	'use strict';
 	function My_AlertBox(str,mydialog_fn){
 		var _this = this;
-		str = str||'警告';
-
+		if((typeof str)!=='string'){
+			alert('第一个参数需要为字符串');
+			return false;
+		}
 		var oDate = new Date().getTime();
 		var mydialog_Btn = 'mydialog_Btn'+oDate;
 		this.myDialog_newDiv = document.createElement('div');
@@ -50,6 +52,7 @@
 		this.DragObj.addEventListener('mousedown',function(ev){
 			var oEvent = ev||event;
 			_this.myDialogDragDown(oEvent);
+			oEvent.preventDefault();
 			return false;
 		},false);
 

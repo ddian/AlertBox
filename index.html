@@ -29,12 +29,80 @@
 		max-width: 640px;
 		margin:0 auto;
 	}
+	@-webkit-keyframes test{
+		from{
+			background-position:-200px 0;
+		}
+		to{
+			background-position:600px 0;
+		}
+	}
+	@-moz-keyframes test{
+		from{
+			background-position:-200px 0;
+		}
+		to{
+			background-position:800px 0;
+		}
+	}
+	@keyframes test{
+		from{
+			background-position:-200px 0;
+		}
+		to{
+			background-position:800px 0;
+		}
+	}
+	@-ms-keyframes test{
+		from{
+			background-position:-200px 0;
+		}
+		to{
+			background-position:800px 0;
+		}
+	}
+	@-o-keyframes test{
+		from{
+			background-position:-200px 0;
+		}
+		to{
+			background-position:800px 0;
+		}
+	}
 	.header_content h1{
-		font-size: 30px;
-		font-weight:bold;
+		position: relative; 
+		letter-spacing:2px;
 		padding: 60px 20px 10px 10px;
 	}
-	.header_content h2{padding-left:10px;}
+	.header_content h1 span{
+		font-size: 34px;
+		font-weight:bold;
+		position: absolute;
+		top:0;
+		left:0;
+		padding-left:10px;
+		padding-top: 60px;
+	}
+	.header_content h1 span.toplight{
+		background-image:-webkit-linear-gradient(-60deg,rgba(255,0,0,0) 40%,rgba(255,0,0,1) 50%,rgba(255,0,0,0) 60%);
+		background-image:-moz-linear-gradient(-30deg,rgba(255,0,0,0) 40%,rgba(255,0,0,1) 50%,rgba(255,0,0,0) 60%);
+		background-image:-o-linear-gradient(-30deg,rgba(255,0,0,0) 40%,rgba(255,0,0,1) 50%,rgba(255,0,0,0) 60%);
+		background-image:-ms-linear-gradient(-30deg,rgba(255,0,0,0) 40%,rgba(255,0,0,1) 50%,rgba(255,0,0,0) 60%);
+		background-image:linear-gradient(-30deg,rgba(255,0,0,0) 40%,rgba(255,0,0,1) 50%,rgba(255,0,0,0) 60%);
+		-webkit-background-clip:text;
+		-moz-background-clip:text;
+		-o-background-clip:text;
+		-ms-background-clip:text;
+		background-clip:text;
+		color: rgba(255,0,0,0);
+		background-position:-250px 0;
+		-webkit-animation:test 10s linear infinite;
+		-moz-animation:test 10s linear infinite;
+		-ms-animation:test 10s linear infinite;
+		-o-animation:test 10s linear infinite;
+		animation:test 10s linear infinite;
+	}
+	.header_content h2{padding-left:10px;margin-top:50px;}
 	.header_content a{
 		position: absolute;
 		top:0;
@@ -49,6 +117,7 @@
 		-ms-transition:0.2s all ease;
 		-o-transition:0.2s all ease;
 		transition:0.2s all ease;
+		z-index: 100;
 	}
 	.header_content a:hover{
 		text-decoration: underline;
@@ -166,6 +235,9 @@
 		line-height: 50px;
 		text-decoration: none;
 		color:#000;
+		width:20%;
+		margin:0 auto;
+		border:5px solid #ccc;
 		-webkit-transition:0.2s all ease;
 		-moz-transition:0.2s all ease;
 		-ms-transition:0.2s all ease;
@@ -192,7 +264,6 @@
 		line-height:100px;
 		text-align:center;
 	}
-	.orange{color:#f60;font-weight:bold;}
 	/*文档样式*/
 	@media screen and (min-resolution: 2dppx){
 		*{
@@ -458,7 +529,10 @@
 <div class="header" style="width:100%">
 	<header class="header_content">
 		<a href="https://github.com/ddian/AlertBox" target = "_blank">View on GitHub</a>
-		<h1>Messenger</h1>
+		<h1>
+			<span>Messenger</span>
+			<span class="toplight">Messenger</span>
+		</h1>
 		<h2>A cool confirmation component</h2>
 	</header>
 </div>
@@ -468,7 +542,7 @@
 			Click the button below
 		</p>
 		<a href="javascript:;" id="btn">
-			I'm a button , click me then click <span class="orange">YES</span> , you will get a surprise!
+			button
 		</a>
 	</article>
 </div>

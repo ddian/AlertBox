@@ -92,7 +92,6 @@ html,body{
 	display: none
 }
 .mydialog_alertConfirm .mydialog_mask{
-	position:absolute;
 	top: 0px;
 	left: 0px;
 	width: 100%;
@@ -107,9 +106,8 @@ html,body{
 }
 .mydialog_alertConfirm .mydialog_dialog{
 	cursor:move;
-	min-width:320px;
-	height:200px;
-	position: absolute;
+	position: fixed;
+	min-width: 320px;
 	top:0;
 	left:0;
 	z-index:10000;
@@ -139,10 +137,8 @@ html,body{
 }
 .mydialog_alertConfirm .mydialog_Content p{
 	text-align: center;
-	height:100px;
-	line-height: 100px;
-	padding:0 10px;
-	white-space: nowrap;
+	height:100%;
+	padding:10%;
 }
 .mydialog_alertConfirm .mydialog_Content i{
 	background: url(../img/icon01.png) no-repeat 0px -1960px;
@@ -156,7 +152,7 @@ html,body{
 	height:30px;
 	width:20%;
 	background:#fff;
-	margin-left: 20%;
+	margin:10% 0 10% 20%;
 	text-align: center;
 	line-height: 30px;
 	color:#000;
