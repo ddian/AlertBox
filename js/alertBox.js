@@ -21,17 +21,17 @@
 			<p>'+str+'</p>\
 		</div>\
 		<div class="mydialog_footer"">\
-			<a href="javascript:;" class="mydialogCancelBtn">NO</a>\
-			<a href="javascript:;" class="mydialogConfirmBtn">YES</a>\
+			<a href="javascript:;" class="mydialogCancelBtn">YES</a>\
+			<a href="javascript:;" class="mydialogConfirmBtn">NO</a>\
 		</div>\
 		<a href="javascript:;" class="mydialog_CloseBtn" title="关闭"></a>\
 		<div>';
 
 		document.body.appendChild(this.myDialog_newDiv);
 		this.myDialogParent = document.getElementById(mydialog_Btn);
-		this.confirm  = this.myDialogParent.getElementsByTagName('a')[1];
+		this.confirm  = this.myDialogParent.getElementsByTagName('a')[0];
 		this.close = this.myDialogParent.getElementsByTagName('a')[2];
-		this.cancel = this.myDialogParent.getElementsByTagName('a')[0];
+		this.cancel = this.myDialogParent.getElementsByTagName('a')[1];
 		this.DragObj = this.myDialogParent.getElementsByTagName('div')[1];
 		this.disX = 0;
 		this.disY = 0;
